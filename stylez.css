@@ -1,0 +1,13 @@
+.box
+{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+  border: 1px solid black;
+  float: left;
+}
+
+section
+{
+  overflow: hidden;
+}
