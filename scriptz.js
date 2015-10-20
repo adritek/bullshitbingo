@@ -1,4 +1,4 @@
-var bullshit = "Applications,incentivize,e-tailers,cutting-edge,e-services,functionalities,e-markets,action-items,social,innovative,wikis,integrateAJAX-enabled,Revolutionary,A-list,initiatives,post,dynamic,metrics,revolutionary,value-added,optimize,value-added,reinvent,integrate,unleash,grow,Long-tail,communities,functionalities,mission-critical,holistic,target,beta-test,turnkey,embedded,end-to-end,wireless,aggregate,viral,content,scale,enterprise,streamline,addelivery,streamline,podcasting,Real-time,vortals,e-enable,webservices,architectures,orchestrate,streamline,models,monetize,embedded,virtual,users,sticky,networking,incubate";
+var bullshit = "Applications,incentivize,e-tailers,cutting-edge,e-services,functionalities,e-markets,action-items,social,innovative,wikis"//,integrateAJAX-enabled,Revolutionary,A-list,initiatives,post,dynamic,metrics,revolutionary,value-added,optimize,value-added,reinvent,integrate,unleash,grow,Long-tail,communities,functionalities,mission-critical,holistic,target,beta-test,turnkey,embedded,end-to-end,wireless,aggregate,viral,content,scale,enterprise,streamline,addelivery,streamline,podcasting,Real-time,vortals,e-enable,webservices,architectures,orchestrate,streamline,models,monetize,embedded,virtual,users,sticky,networking,incubate";
 var $boxes = $(".box");
 var grid = 9;
 var randNum;
@@ -12,15 +12,10 @@ for(var i = 0; i < grid; i++){
   randNum = Math.floor(Math.random()* splitwords.length);
   gridNums.push(randNum);
 }
-
-// match the numbers from splitwords
-for (var i = 0; i < splitwords.length; i++){
-  for (var j = 0; j < gridNums.length; j++){
-    if (splitwords[i] == gridNums[j]){
-      console.log("match");
-    }
-  }
-}
+splitwords.forEach(function(item, index, array){
+  console.log(index + ": " + item);
+});
+console.log("Comparasin: " + gridNums[1] + ": " + splitwords[gridNums[1]]);
 
 /*TODO*/
 // place words into the grid
