@@ -12,17 +12,13 @@ for(var i = 0; i < grid; i++){
   randNum = Math.floor(Math.random()* splitwords.length);
   gridNums.push(randNum);
 }
-splitwords.forEach(function(item, index, array){
-  console.log(index + ": " + item);
-});
-console.log("Comparasin: " + gridNums[1] + ": " + splitwords[gridNums[1]]);
+console.log($boxes.length);
 
-/*TODO*/
-// place words into the grid
-// select 9 words
+for (var i = 0; i < $boxes.length; i++) {
+  $boxes.append("<p>" + splitwords[gridNums[i]] + "</p>");
+  console.log("Comparison: " + gridNums[i] + ": " + splitwords[gridNums[i]]);
+}
 
 /* logging */
-console.log("The string is now in an array of: " + splitwords.length + " elements");
-console.log("We now have " + gridNums.length + " random numbers from the array length " + gridNums.sort());
-console.log("There are: " +$boxes.length + " boxes on the screen");
-// console.log(splitString());
+console.log("The string is now an array of: " + splitwords.length + " elements");
+console.log("We now have " + gridNums.length + " random numbers from the array length - they are: " + gridNums);
