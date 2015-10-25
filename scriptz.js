@@ -21,13 +21,16 @@ $boxes.each(function(index){
 // Set a listener to check off a word when it is clicked
 function notify(){
   $(this).toggleClass("checked");
-  checkLine();
+  // console.log($(this).text());
+  checkLine($(this));
 }
 $(".box").on("click", notify);
 
-// Check if a line is checked off
-function checkLine(){
-  if (grid == 9){
-    console.log($(this));
+// Check if a line is checked
+function checkLine($element){
+  if ($element.hasClass("checked")){
+    // console.log($element.get());
+    var index = $( ".checked" ).index($element);
+    console.log( "That was div index #" + $element );
   }
 }
