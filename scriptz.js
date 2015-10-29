@@ -30,7 +30,8 @@ $(".box").on("click", notify);
 function checkLine($element){
   if ($element.hasClass("checked")){
     // console.log($element.get());
-    var index = $( ".checked" ).index($element);
-    console.log( "That was div index #" + $element );
+    var index = $( ".box" ).index($element);
+    
+    console.log( "That was div index #" + index );
   }
 }
