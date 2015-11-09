@@ -3,6 +3,7 @@ var $boxes = $(".box");
 var grid = 9;
 var randNum;
 var gridNums = [];
+var selected = [];
 
 /* Functions */
 var splitwords = bullshit.split(","); // array
@@ -28,10 +29,34 @@ $(".box").on("click", notify);
 
 // Check if a line is checked
 function checkLine($element){
-  if ($element.hasClass("checked")){
-    // console.log($element.get());
-    var index = $( ".box" ).index($element);
-    
-    console.log( "That was div index #" + index );
+  // check for row bingo TODO: use modulus for different grids - saw it on codepen somewhere
+  var winners = [
+    [0,1,2],
+    [3,4,5],
+    [6,7,8]
+  ]
+
+  var possibleWinners = winners.length;
+
+  console.log("Selected boxes in array: " + selected.length);
+
+  selected.push($element);
+
+  // Compare winners array to selected array for matches
+  for (var i = 0; i < possibleWinners; i++) {
+    var cellExists = 0;
+
+    for (var j = 0; j < 3; j++) {
+      if ($.inArray(winners[i][j], selected) > -1) {
+          cellExists++;
+      }
+    }
+
+    // If all 5 winner cells exist in selected array alert success message
+    if (cellExists == 3) {
+      alert('Winner!');
+    }
   }
+  var index = $( ".box" ).index($element); //for logging
+  console.log( "That was div index #" + index );
 }
