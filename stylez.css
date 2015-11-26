@@ -1,23 +1,46 @@
 body{
-  width: 600px;
+  font-family: "Comic sans", Helvetica, sans-serif;
+  background-color: #d6fafc;
   margin: 0 auto;
+  max-width: 500px;
+  padding: 0 10px;
+}
+
+h1
+{
+  background: yellow;
+  height: 2em;
+  padding-top: 25px;
+  margin: 0;
+  text-align: center;
+}
+
+section
+{
+  display: flex;
+  flex-flow: row;
+  align-content: stretch;
+}
+
+section p
+{
+  padding-top: 20px;
 }
 
 .box
 {
+  flex-grow: 1;
+  background: tomato;
+  width: 90px;
   height: 100px;
-  width: 100px;
-  background-color: red;
-  border: 1px solid black;
-  float: left;
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  text-align: center;
+  border: 1px solid white;
 }
 
 .checked
 {
   background-color: hotpink;
-}
-
-section
-{
-  overflow: hidden;
 }
